@@ -1,6 +1,6 @@
 package com.cqhpoldi.controller;
 
-import com.cqhpoldi.pojo.AdminEntity;
+import com.cqhpoldi.pojo.Admin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class HomeController {
     public String index(){
         System.out.println("show index");
         logger.info("hello world");
-        AdminEntity admin = new AdminEntity();
+        Admin admin = new Admin();
         admin.setName("cqh");
         admin.setPassword("123456");
         System.out.println(admin.getName() + "11111controller name");

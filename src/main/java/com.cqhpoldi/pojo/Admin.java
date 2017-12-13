@@ -1,11 +1,13 @@
 package com.cqhpoldi.pojo;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "admin", schema = "web-Blog", catalog = "")
-public class AdminEntity {
+public class Admin {
     private int id;
     private String name;
     private String password;
@@ -111,17 +113,17 @@ public class AdminEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdminEntity that = (AdminEntity) o;
+        Admin admin = (Admin) o;
 
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (avatar != null ? !avatar.equals(that.avatar) : that.avatar != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (token != null ? !token.equals(that.token) : that.token != null) return false;
-        if (changeTime != null ? !changeTime.equals(that.changeTime) : that.changeTime != null) return false;
-        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
-        if (deleteTime != null ? !deleteTime.equals(that.deleteTime) : that.deleteTime != null) return false;
+        if (id != admin.id) return false;
+        if (name != null ? !name.equals(admin.name) : admin.name != null) return false;
+        if (password != null ? !password.equals(admin.password) : admin.password != null) return false;
+        if (avatar != null ? !avatar.equals(admin.avatar) : admin.avatar != null) return false;
+        if (status != null ? !status.equals(admin.status) : admin.status != null) return false;
+        if (token != null ? !token.equals(admin.token) : admin.token != null) return false;
+        if (changeTime != null ? !changeTime.equals(admin.changeTime) : admin.changeTime != null) return false;
+        if (createTime != null ? !createTime.equals(admin.createTime) : admin.createTime != null) return false;
+        if (deleteTime != null ? !deleteTime.equals(admin.deleteTime) : admin.deleteTime != null) return false;
 
         return true;
     }

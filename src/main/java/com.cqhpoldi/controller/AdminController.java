@@ -1,6 +1,6 @@
 package com.cqhpoldi.controller;
 
-import com.cqhpoldi.pojo.AdminEntity;
+import com.cqhpoldi.pojo.Admin;
 import com.cqhpoldi.service.AdminService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +21,8 @@ public class AdminController {
 
     @ResponseBody
     @RequestMapping(value = "/register",method = RequestMethod.GET)
-    public AdminEntity register(String username, String password){
-        AdminEntity admin = new AdminEntity();
+    public Admin register(String username, String password){
+        Admin admin = new Admin();
         admin.setName("kaka");
         admin.setPassword("123456");
         System.out.println("service return");

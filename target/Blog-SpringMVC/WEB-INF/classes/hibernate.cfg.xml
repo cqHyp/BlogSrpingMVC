@@ -6,10 +6,17 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://112.74.198.15:3306/web-Blog</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-      <mapping class="com.cqhpoldi.pojo.AdminEntity"/>
-      <!-- <property name="connection.username"/> -->
-    <!-- <property name="connection.password"/> -->
+    <property name="connection.username">cqh</property>
+    <property name="connection.password">123456</property>
 
+    <!-- 配置 Hibernate 的基本信息 -->
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+    <!-- 指定自动生成数据表的策略 -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <mapping class="com.cqhpoldi.pojo.Admin"/>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
