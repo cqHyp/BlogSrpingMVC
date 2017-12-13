@@ -6,39 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5fade7e-8e2c-4794-90bc-1c9c1ef05321" name="Default" comment="SessionFactory 配置">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f68a68fb-a4da-409a-9bd4-e300e8fad18b.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/f68a68fb-a4da-409a-9bd4-e300e8fad18b.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="e5fade7e-8e2c-4794-90bc-1c9c1ef05321" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/BlogSpringMVC.iml" afterPath="$PROJECT_DIR$/BlogSpringMVC.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/controller/AdminController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/controller/HomeController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/dao/AdminDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/dao/AdminDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/dao/DAOImp/AdminDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/dao/DAOImp/AdminDAOImp.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/pojo/AdminEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/pojo/Admin.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/service/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/com.cqhpoldi/service/AdminService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/controller/AdminController.class" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/controller/HomeController.class" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/dao/AdminDAO.class" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/dao/AdminDAO.class" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/dao/DAOImp/AdminDAOImp.class" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/dao/DAOImp/AdminDAOImp.class" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/pojo/AdminEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/service/AdminService.class" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/com/cqhpoldi/service/AdminService.class" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/target/Blog-SpringMVC/WEB-INF/classes/spring/spring-mvc.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cqhpoldi/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/com/cqhpoldi/controller/AdminController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cqhpoldi/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/com/cqhpoldi/controller/HomeController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cqhpoldi/dao/AdminDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/cqhpoldi/dao/AdminDAO.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cqhpoldi/dao/DAOImp/AdminDAOImp.class" afterPath="$PROJECT_DIR$/target/classes/com/cqhpoldi/dao/DAOImp/AdminDAOImp.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cqhpoldi/pojo/AdminEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cqhpoldi/service/AdminService.class" afterPath="$PROJECT_DIR$/target/classes/com/cqhpoldi/service/AdminService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-mvc.xml" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -587,12 +556,20 @@
       <workItem from="1513050287631" duration="933000" />
       <workItem from="1513051226949" duration="3070000" />
       <workItem from="1513079054470" duration="4976000" />
-      <workItem from="1513128835523" duration="44000" />
+      <workItem from="1513128835523" duration="167000" />
     </task>
+    <task id="LOCAL-00001" summary="SessionFactory 配置">
+      <created>1513128932112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513128932113</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42205000" />
+    <option name="totallyTimeSpent" value="42328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -617,8 +594,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24880952" sideWeight="0.25235602" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24880952" sideWeight="0.747644" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Persistence" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24880952" sideWeight="0.25235602" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24880952" sideWeight="0.747644" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24880952" sideWeight="0.51638067" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
