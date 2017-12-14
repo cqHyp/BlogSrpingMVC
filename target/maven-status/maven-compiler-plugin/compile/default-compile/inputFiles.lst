@@ -2,5 +2,6 @@
 /Users/poldi/IdeaProjects/BlogSrpingMVC/src/main/java/com.cqhpoldi/controller/HomeController.java
 /Users/poldi/IdeaProjects/BlogSrpingMVC/src/main/java/com.cqhpoldi/util/Response.java
 /Users/poldi/IdeaProjects/BlogSrpingMVC/src/main/java/com.cqhpoldi/dao/DAOImp/AdminDAOImp.java
+/Users/poldi/IdeaProjects/BlogSrpingMVC/src/main/java/com.cqhpoldi/pojo/Admin.java
 /Users/poldi/IdeaProjects/BlogSrpingMVC/src/main/java/com.cqhpoldi/controller/AdminController.java
 /Users/poldi/IdeaProjects/BlogSrpingMVC/src/main/java/com.cqhpoldi/service/AdminService.java

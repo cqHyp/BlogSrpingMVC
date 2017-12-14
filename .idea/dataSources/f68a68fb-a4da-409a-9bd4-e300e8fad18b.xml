@@ -918,10 +918,13 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="232" parent="9" name="admin">
+    <table id="232" parent="9" name="Admin">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="233" parent="232" name="id">
+    <table id="233" parent="9" name="Article">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="234" parent="232" name="id">
       <Position>1</Position>
       <Comment>admin 管理员 id&#xd;
 </Comment>
@@ -930,55 +933,71 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="232" name="name">
+    <column id="235" parent="232" name="name">
       <Position>2</Position>
       <Comment>admin 管理员 姓名</Comment>
       <DataType>varchar(8)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="232" name="password">
+    <column id="236" parent="232" name="password">
       <Position>3</Position>
       <Comment>admin 管理员 密码</Comment>
       <DataType>varchar(24)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="232" name="avatar">
+    <column id="237" parent="232" name="avatar">
       <Position>4</Position>
       <Comment>admin 管理员 头像</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="232" name="status">
+    <column id="238" parent="232" name="status">
       <Position>5</Position>
       <Comment>admin 管理员 状态</Comment>
       <DataType>tinyint(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="232" name="token">
+    <column id="239" parent="232" name="token">
       <Position>6</Position>
       <Comment>admin 管理员 token 前后端交互</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="232" name="changeTime">
+    <column id="240" parent="232" name="changeTime">
       <Position>7</Position>
       <Comment>admin 管理员 最近一次修改时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="232" name="createTime">
+    <column id="241" parent="232" name="createTime">
       <Position>8</Position>
       <Comment>admin 管理员 创建时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="232" name="deleteTime">
+    <column id="242" parent="232" name="deleteTime">
       <Position>9</Position>
       <Comment>admin 管理员 删除时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="242" parent="232" name="PRIMARY">
+    <key id="243" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="244" parent="233" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="233" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="246" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

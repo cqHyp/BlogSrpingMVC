@@ -23,10 +23,15 @@ public class AdminController {
     @RequestMapping(value = "/register",method = RequestMethod.GET)
     public Admin register(String username, String password){
         Admin admin = new Admin();
-        admin.setName("kaka");
+        admin.setName("Spur");
         admin.setPassword("123456");
-        System.out.println("service return");
         return adminService.addNewAdmin(admin);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public Admin update(){
+        return adminService.updateAdmin();
     }
 
 }
