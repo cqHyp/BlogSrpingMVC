@@ -20,13 +20,16 @@
         <fileset id="fileset" name="Spring Mvc" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mvc.xml</file>
         </fileset>
+        <fileset id="fileset2" name="ApplicationContext" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mvc.xml</file>
+        </fileset>
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="f68a68fb-a4da-409a-9bd4-e300e8fad18b" />
-          <unit-entry name="sessionFactory" />
+          <unit-entry name="sessionFactory" value="49532138-a2ea-47c5-bcc1-3f7c8296b3cf" />
         </datasource-map>
         <naming-strategy-map>
           <unit-entry name="hibernate.cfg.xml" />

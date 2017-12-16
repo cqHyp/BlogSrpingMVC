@@ -47,17 +47,26 @@
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="resolveLazily" value="true"/>
     </bean>
+
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="configLocation" value="classpath:hibernate.cfg.xml">
-        </property>
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+        <!--<property name="jtaTransactionManager" ref="transactionManager" ></property>-->
     </bean>
 
-    <!-- 事务管理器配置, Hibernate单数据源事务 -->
-    <bean id="defaultTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+        <!--<property name="url" value="jdbc:mysql://112.74.198.15:3306/web-Blog" />-->
+        <!--<property name="username" value="cqh" />-->
+        <!--<property name="password" value="`123456" />-->
+    <!--</bean>-->
 
-    <!-- 使用annotation定义事务 -->
-    <tx:annotation-driven transaction-manager="defaultTransactionManager" proxy-target-class="true" /><tx:annotation-driven/>
+    <!--<bean id="transactionManager"-->
+          <!--class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
+        <!--<property name="sessionFactory" ref="sessionFactory" />-->
+    <!--</bean>-->
+    <!--跨域请求-->
+    <mvc:cors>
+        <mvc:mapping path="/**" allowed-origins="*" allow-credentials="true" max-age="1800" allowed-methods="GET,POST,OPTIONS"/>
+    </mvc:cors>
 </beans>

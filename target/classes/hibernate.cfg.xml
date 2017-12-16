@@ -8,17 +8,18 @@
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="connection.username">cqh</property>
     <property name="connection.password">123456</property>
-    <!-- 配置 Hibernate 的基本信息 -->
+      <!-- 配置 Hibernate 的基本信息 -->
     <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
     <!-- 指定自动生成数据表的策略 -->
     <property name="hbm2ddl.auto">update</property>
-
-    <mapping class="com.cqhpoldi.pojo.Admin"/>
+    <property name="current_session_context_class">thread</property>
+      <mapping class="com.cqhpoldi.pojo.Admin"/>
     <mapping class="com.cqhpoldi.pojo.Article"/>
+      <mapping class="com.cqhpoldi.pojo.Category"/>
 
-    <!-- DB schema will be updated if needed -->
+      <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>

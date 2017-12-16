@@ -4,6 +4,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,9 +18,10 @@ public class Admin {
     private Timestamp changeTime;
     private Timestamp createTime;
     private Timestamp deleteTime;
+    private Timestamp lastLoginTime;
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     public int getId() {
         return id;
     }
@@ -29,7 +31,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "name")
+    @Column(name = "name", nullable = true, length = 8)
     public String getName() {
         return name;
     }
@@ -39,7 +41,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "password")
+    @Column(name = "password", nullable = true, length = 24)
     public String getPassword() {
         return password;
     }
@@ -49,7 +51,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "avatar")
+    @Column(name = "avatar", nullable = true, length = 255)
     public String getAvatar() {
         return avatar;
     }
@@ -59,7 +61,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "status")
+    @Column(name = "status", nullable = true)
     public Byte getStatus() {
         return status;
     }
@@ -69,7 +71,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "token")
+    @Column(name = "token", nullable = true, length = 255)
     public String getToken() {
         return token;
     }
@@ -79,7 +81,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "changeTime")
+    @Column(name = "changeTime", nullable = true)
     public Timestamp getChangeTime() {
         return changeTime;
     }
@@ -89,7 +91,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "createTime")
+    @Column(name = "createTime", nullable = true)
     public Timestamp getCreateTime() {
         return createTime;
     }
@@ -99,7 +101,7 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "deleteTime")
+    @Column(name = "deleteTime", nullable = true)
     public Timestamp getDeleteTime() {
         return deleteTime;
     }
@@ -140,5 +142,15 @@ public class Admin {
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + (deleteTime != null ? deleteTime.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "lastLoginTime", nullable = true)
+    public Timestamp getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    public void setLastLoginTime(Timestamp lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
     }
 }
