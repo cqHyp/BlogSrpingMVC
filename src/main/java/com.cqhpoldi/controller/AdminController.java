@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -26,24 +28,31 @@ public class AdminController {
     public Response login(@RequestBody Admin admin){
         Response response = new Response();
         Object result;
-        if (adminService.findByName(admin.getName())){
-            Admin reAdmin = adminService.login(admin.getName(),admin.getPassword());
-            if (reAdmin != null){
-                // 登录成功 更新登录信息
-                adminService.updateAdmin(reAdmin);
-                result = reAdmin;
-                response.setCode(1);
-                response.setMessage("登陆成功！");
+        if (admin !=null){
+            if (adminService.findByName(admin.getName())){
+                Admin reAdmin = adminService.login(admin.getName(),admin.getPassword());
+                if (reAdmin != null){
+                    // 登录成功 更新登录信息
+                    adminService.updateAdmin(reAdmin);
+                    result = reAdmin;
+                    response.setCode(1);
+                    response.setMessage("登陆成功！");
+                }else {
+                    result = false;
+                    response.setCode(0);
+                    response.setMessage("密码错误！");
+                }
             }else {
                 result = false;
+                response.setMessage("账号不存在！");
                 response.setCode(0);
-                response.setMessage("密码错误！");
             }
         }else {
             result = false;
-            response.setMessage("账号不存在！");
+            response.setMessage("");
             response.setCode(0);
         }
+
         response.setData(result);
         return response;
     }
@@ -53,25 +62,32 @@ public class AdminController {
     public Response register(@RequestBody Admin admin){
         Response response = new Response();
         Object result;
-        if (adminService.findByName(admin.getName())){
-            // 用户名 存在 无法注册
-            result = false;
-            response.setCode(0);
-            response.setMessage("用户名已存在！");
-        }else {
-            // 用户名 不存在 可以注册
-            if (adminService.addNewAdmin(admin)){
-                // 注册 成功
-                result = true;
-                response.setCode(1);
-                response.setMessage("注册成功！");
-            }else {
-                // 注册 失败
+        if (admin != null){
+            if (adminService.findByName(admin.getName())){
+                // 用户名 存在 无法注册
                 result = false;
                 response.setCode(0);
-                response.setMessage("注册失败！");
+                response.setMessage("用户名已存在！");
+            }else {
+                // 用户名 不存在 可以注册
+                if (adminService.addNewAdmin(admin)){
+                    // 注册 成功
+                    result = true;
+                    response.setCode(1);
+                    response.setMessage("注册成功！");
+                }else {
+                    // 注册 失败
+                    result = false;
+                    response.setCode(0);
+                    response.setMessage("注册失败！");
+                }
             }
+        }else {
+            result = false;
+            response.setMessage("");
+            response.setCode(0);
         }
+
         response.setData(result);
         return response;
     }
@@ -98,6 +114,34 @@ public class AdminController {
             }
         }else {
             // 用户 不存在 失败
+            result = false;
+            response.setCode(0);
+            response.setMessage("用户不存在！");
+        }
+
+        response.setData(result);
+        return response;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/logOut", method = RequestMethod.POST)
+    public Response logOut(@RequestBody Map<String, String> map){
+        Response response = new Response();
+        Object result;
+        String token = map.get("token");
+        Admin admin = adminService.getByToken(token);
+        if (admin != null){
+            if (adminService.logOutAdmin(admin)){
+                result = true;
+                response.setCode(1);
+                response.setMessage("登出成功！");
+            }else {
+                result = false;
+                response.setCode(0);
+                response.setMessage("登出失败！");
+            }
+        }else {
+            // 找不到该用户
             result = false;
             response.setCode(0);
             response.setMessage("用户不存在！");

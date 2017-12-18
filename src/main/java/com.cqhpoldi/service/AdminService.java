@@ -16,22 +16,18 @@ public class AdminService {
     @Autowired
     private AdminDAO adminDAO;
 
-    @Transactional
     public Admin login(String name, String password){
         return adminDAO.login(name,password);
     }
 
-    @Transactional
     public boolean findByName(String name){
         return adminDAO.findByName(name);
     }
 
-    @Transactional
     public Admin getByName(String name){
         return adminDAO.getByName(name);
     }
 
-    @Transactional
     public boolean addNewAdmin(Admin admin){
         //注册 创建 createTime
         Timestamp timestamp = new Timestamp((new Date()).getTime());
@@ -39,7 +35,6 @@ public class AdminService {
         return adminDAO.addAdmin(admin);
     }
 
-    @Transactional
     public boolean updateAdmin(Admin admin){
         // 更新 近期登录时间
         Timestamp timestamp = new Timestamp((new Date()).getTime());
@@ -50,7 +45,6 @@ public class AdminService {
         return adminDAO.update(admin);
     }
 
-    @Transactional
     public boolean resetPassword(Admin admin){
         // 更新 最近一次修改时间
         Timestamp timestamp = new Timestamp((new Date()).getTime());
@@ -59,4 +53,14 @@ public class AdminService {
         return adminDAO.update(admin);
     }
 
+    public Admin getByToken(String token){
+        return adminDAO.findByToken(token);
+    }
+
+    public boolean logOutAdmin(Admin admin){
+        String token = null;
+        admin.setToken(token);
+
+        return adminDAO.update(admin);
+    }
 }

@@ -28,7 +28,7 @@ public class CategoryDAO implements CategoryDAOImp {
     @Transactional
     public boolean addCategory(Category category) {
         session = sessionFactory.getCurrentSession();
-        Transaction transaction = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();// 开启事务
 
         try{
             session.save(category);
