@@ -13,6 +13,8 @@ public class Category {
     private Integer parent;
     private String description;
 
+    private int count;
+
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -61,6 +63,16 @@ public class Category {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Basic
+    @Column(name = "count" , nullable = true)
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     @Override

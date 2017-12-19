@@ -58,6 +58,7 @@ public class AdminService {
     }
 
     public boolean logOutAdmin(Admin admin){
+        //退出登录 token置空
         String token = null;
         admin.setToken(token);
 
