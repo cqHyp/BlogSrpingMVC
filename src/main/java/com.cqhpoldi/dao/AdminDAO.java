@@ -22,7 +22,6 @@ public class AdminDAO implements AdminDAOImp {
         return sessionFactory.getCurrentSession();
     }
 
-
     public Admin login(String name, String password){
         // 根据 name 和 password 找 Admin
 
@@ -106,6 +105,20 @@ public class AdminDAO implements AdminDAOImp {
             return list.get(0);
         }else {
             return null;
+        }
+    }
+
+    public boolean checkToken(String token){
+        String hql = "from Admin where token = :token";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setString("token",token);
+
+        List<Admin> list = query.list();
+
+        if (list != null && list.size() > 0){
+            return true;
+        }else {
+            return false;
         }
     }
 }
