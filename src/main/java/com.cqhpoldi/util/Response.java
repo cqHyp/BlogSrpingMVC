@@ -12,6 +12,14 @@ public class Response {
         this.message = message;
     }
 
+    public Response sendResponse(int code, Object data, String message){
+        Response response = new Response();
+        response.setCode(code);
+        response.setData(data);
+        response.setMessage(message);
+        return response;
+    }
+
     public void setCode(int code) {
         this.code = code;
     }

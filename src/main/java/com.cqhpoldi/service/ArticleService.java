@@ -1,13 +1,14 @@
 package com.cqhpoldi.service;
 
 import com.cqhpoldi.dao.AdminDAO;
+import com.cqhpoldi.dao.ArticleDAO;
 import com.cqhpoldi.dao.CategoryDAO;
 import com.cqhpoldi.dao.TagsDAO;
+import com.cqhpoldi.pojo.Article;
 import com.cqhpoldi.pojo.Category;
 import com.cqhpoldi.pojo.Tags;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class ArticleService {
     private AdminDAO adminDAO;
     @Autowired
     private TagsDAO tagsDAO;
+    @Autowired
+    private ArticleDAO articleDAO;
 
     // 验证 token
     public boolean checkToken(String token){
@@ -63,5 +66,10 @@ public class ArticleService {
     // 计算 获取 Tags 列表 的数量
     public int CountTagsList(String key){
         return tagsDAO.CountTagsList(key);
+    }
+
+    // 新增 博客
+    public boolean addArticle(Article article){
+        return articleDAO.addArticle(article);
     }
 }

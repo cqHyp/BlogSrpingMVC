@@ -1,5 +1,6 @@
 package com.cqhpoldi.controller;
 
+import com.cqhpoldi.pojo.Article;
 import com.cqhpoldi.pojo.Category;
 import com.cqhpoldi.pojo.Tags;
 import com.cqhpoldi.service.ArticleService;
@@ -29,31 +30,31 @@ public class ArticleController {
 
     @ResponseBody
     @RequestMapping(value = "/addCategory", method = RequestMethod.POST)
-    public Response addNewCategory(@RequestBody Category category, HttpServletRequest request){
+    public Response addNewCategory(@RequestBody Category category, HttpServletRequest request) {
         Response response = new Response();
         Object result;
         String token = request.getParameter("token");
-        if (articleService.checkToken(token)){
-            if (articleService.findByName(category.getName())){
+        if (articleService.checkToken(token)) {
+            if (articleService.findByName(category.getName())) {
                 // 分类已存在 无法添加
                 result = false;
                 response.setCode(0);
                 response.setMessage("分类已存在！");
-            }else {
+            } else {
                 // 分类不存在 可以添加
-                if (articleService.addCategory(category)){
+                if (articleService.addCategory(category)) {
                     // 添加成功
                     result = true;
                     response.setCode(1);
                     response.setMessage("添加分类成功！");
-                }else {
+                } else {
                     // 添加失败
                     result = false;
                     response.setCode(0);
                     response.setMessage("添加分类失败！");
                 }
             }
-        }else {
+        } else {
             result = false;
             response.setCode(0);
             response.setMessage("Token 无效");
@@ -64,7 +65,7 @@ public class ArticleController {
 
     @ResponseBody
     @RequestMapping(value = "/getCategoryParent", method = RequestMethod.POST)
-    public Response getCategoryParentList(){
+    public Response getCategoryParentList() {
         Response response = new Response();
         Object result;
 
@@ -79,7 +80,7 @@ public class ArticleController {
 
     @ResponseBody
     @RequestMapping(value = "/getCategoryList", method = RequestMethod.POST)
-    public Response getCategoryList(@RequestBody Map<String, String> map){
+    public Response getCategoryList(@RequestBody Map<String, String> map) {
         Response response = new Response();
         Object result;
         int page = Integer.parseInt(map.get("page"));
@@ -87,19 +88,19 @@ public class ArticleController {
 
         List<Category> list;
         int number;
-        if (map.containsKey("key")){
+        if (map.containsKey("key")) {
             // 是否有关键字 查询
             String key = map.get("key");
             list = articleService.getCategoryList(page, count, key);
             number = articleService.CountCategoryList(key);
-        }else {
+        } else {
             list = articleService.getCategoryList(page, count, null);
             number = articleService.CountCategoryList(null);
         }
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("list",list);
-        resultMap.put("count",number);
+        resultMap.put("list", list);
+        resultMap.put("count", number);
 
         result = resultMap;
         response.setCode(1);
@@ -111,26 +112,26 @@ public class ArticleController {
 
     @ResponseBody
     @RequestMapping(value = "/addTags", method = RequestMethod.POST)
-    public Response addNewTags(@RequestBody Tags tags, HttpServletRequest request){
+    public Response addNewTags(@RequestBody Tags tags, HttpServletRequest request) {
         Response response = new Response();
         Object result;
         String token = request.getParameter("token");
-        if (token == null){
+        if (token == null) {
             response.setMessage("Token 不能为空！");
             response.setCode(0);
             result = false;
-        }else {
-            if (articleService.checkToken(token)){
-                if (articleService.addTags(tags)){
+        } else {
+            if (articleService.checkToken(token)) {
+                if (articleService.addTags(tags)) {
                     result = true;
                     response.setCode(1);
                     response.setMessage("添加标签成功！");
-                }else {
+                } else {
                     result = false;
                     response.setCode(0);
                     response.setMessage("添加标签失败！");
                 }
-            }else {
+            } else {
                 result = false;
                 response.setCode(0);
                 response.setMessage("Token 无效");
@@ -142,7 +143,7 @@ public class ArticleController {
 
     @ResponseBody
     @RequestMapping(value = "/getTagsList", method = RequestMethod.POST)
-    public Response getTagsList(@RequestBody Map<String,String> map){
+    public Response getTagsList(@RequestBody Map<String, String> map) {
         Response response = new Response();
         Object result;
         int page = Integer.parseInt(map.get("page"));
@@ -152,24 +153,46 @@ public class ArticleController {
         int number;
         System.out.println("page = " + page + "count = " + count);
 
-        if (map.containsKey("key")){
+        if (map.containsKey("key")) {
             String key = map.get("key");
             list = articleService.getTagsList(page, count, key);
             number = articleService.CountTagsList(key);
-        }else {
+        } else {
             list = articleService.getTagsList(page, count, null);
             number = articleService.CountTagsList(null);
         }
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
-        resultMap.put("list",list);
-        resultMap.put("count",number);
+        resultMap.put("list", list);
+        resultMap.put("count", number);
 
         result = resultMap;
         response.setCode(1);
         response.setMessage("获取成功！");
 
         response.setData(result);
+        return response;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/addNewArticle", method = RequestMethod.POST)
+    public Response addNewArticle(@RequestBody Article article, HttpServletRequest request) {
+        Response response = new Response();
+        Object result;
+        String token = request.getParameter("token");
+        boolean res = articleService.addArticle(article);
+        if (res){
+            result = true;
+            response.setCode(1);
+            response.setMessage("新增博客成功！");
+        }else {
+            result = false;
+            response.setCode(0);
+            response.setMessage("新增博客失败！");
+        }
+        response.setData(result);
+
+
         return response;
     }
 }
